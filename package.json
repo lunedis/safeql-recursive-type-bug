@@ -1,0 +1,20 @@
+{
+  "name": "safeql-recursive-bug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ts-safeql/eslint-plugin": "^2.0.3",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^7.7.0",
+    "postgres": "^3.4.4"
+  }
+}

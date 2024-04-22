@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16.2
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - "./init.sql:/docker-entrypoint-initdb.d/init.sql"
+    ports:
+      - '5432:5432'
+
+
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - '4001:8080'

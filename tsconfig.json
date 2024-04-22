@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "lib": ["es2018"],
+    "outDir": "./dist",
+    "incremental": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node-modules/**/*"],
+}
