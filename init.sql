@@ -4,4 +4,9 @@ CREATE TABLE employees (
   boss_id INT
 );
 
-INSERT INTO employees (id, name, boss_id) VALUES (1, 'Big Boss', NULL), (2, 'Employee 1', 1), (3, 'Independent Guy', NULL);
+INSERT INTO 
+  employees (id, name, boss_id) 
+VALUES 
+  (1, 'Big Boss', NULL),
+  (2, 'Employee 1', 1),
+  (3, 'Independent Guy', NULL);
