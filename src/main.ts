@@ -1,7 +1,9 @@
 import postgres from "postgres";
 
 export const sql = postgres(
-  "postgres://postgres:postgres@localhost:5432/postgres"
+  "postgres://postgres:postgres@localhost:5432/postgres", {
+    transform: postgres.camel,
+  }
 );
 
 // safeql generates wrong type assertions
