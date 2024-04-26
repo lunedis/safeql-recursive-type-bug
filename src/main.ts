@@ -7,19 +7,19 @@ export const sql = postgres(
 );
 
 // safeql generates wrong type assertions
-sql<{ id: number | null; name: string | null; bossName: string | null; }[]>`
+sql<{ id: string; name: string; bossName: string }[]>`
     SELECT 
       employees.id,
       employees.name,
       bosses.name AS boss_name
     FROM employees
-    LEFT OUTER JOIN employees AS bosses ON (employees.boss_id = bosses.id);`;
+    LEFT JOIN employees AS bosses ON (employees.boss_id = bosses.id);`;
 
 // safeql generates wrong type assertions
-sql<{ id: number | null; name: string | null; bossName: string | null; }[]>`
+sql<{ id: string; name: string; bossName: string }[]>`
     SELECT 
       e.id,
       e.name,
       bosses.name AS boss_name
     FROM employees AS e
-    LEFT OUTER JOIN employees AS bosses ON (e.boss_id = bosses.id);`;
+    LEFT JOIN employees AS bosses ON (e.boss_id = bosses.id);`;
