@@ -6,20 +6,19 @@ export const sql = postgres(
   }
 );
 
-// safeql generates wrong type assertions
-sql<{ id: string; name: string; bossName: string }[]>`
-    SELECT 
-      employees.id,
-      employees.name,
-      bosses.name AS boss_name
-    FROM employees
-    LEFT JOIN employees AS bosses ON (employees.boss_id = bosses.id);`;
+interface Text {
+  type: 'entry';
+  name: string;
+}
 
-// safeql generates wrong type assertions
-sql<{ id: string; name: string; bossName: string }[]>`
+interface Group {
+  type: 'group';
+  entries: Entry[];
+}
+
+type Entry = Text | Group;
+
+sql<{ id: number; value: Entry[] }[]>`
     SELECT 
-      e.id,
-      e.name,
-      bosses.name AS boss_name
-    FROM employees AS e
-    LEFT JOIN employees AS bosses ON (e.boss_id = bosses.id);`;
+      id, COALESCE(value, '[]'::jsonb) AS value
+    FROM test;`;

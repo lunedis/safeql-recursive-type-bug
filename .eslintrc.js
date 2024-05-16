@@ -25,9 +25,13 @@ module.exports = {
                   tag: "sql",
                   // Postgres.js type should be an array, so we add an extra "[]" after the generated type:
                   transform: "{type}[]",
-                  fieldTransform: "camel",
                 },
               ],
+              overrides: {
+                columns: {
+                  'test.value': 'Entries',
+                },
+              },
             },
           },
         ],
