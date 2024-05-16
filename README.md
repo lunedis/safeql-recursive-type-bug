@@ -1,6 +1,6 @@
-# ts-safeql recursive outer join bug
+# ts-safeql recursive json type bug
 
-Reproduction repo for https://github.com/ts-safeql/safeql/issues/204
+Reproduction repo for https://github.com/ts-safeql/safeql/issues/218
 
 ## How to reproduce
 
