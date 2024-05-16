@@ -29,7 +29,7 @@ module.exports = {
               ],
               overrides: {
                 columns: {
-                  'test.value': 'Entries',
+                  'test.value': 'Entry[]',
                 },
               },
             },
